@@ -19,6 +19,8 @@ join staff st on s.manager_staff_id = st.staff_id
 GROUP by s.store_id, st.first_name, st.last_name, c2.city
 having count(c.customer_id) > 300
 ```
+
+![задание 1](https://github.com/zilaev/12-4/blob/main/1.png)
 ....
 
 ---
@@ -30,12 +32,12 @@ having count(c.customer_id) > 300
 `Приведите ответ в свободной форме........`
 
 ```
-select title, length
+select COUNT(title)
 from film
 where length > (
 select avg(`length`) from film)
 ```
-
+![задание 2](https://github.com/zilaev/12-4/blob/main/2.png)
 ---
 
 ### Задание 3
@@ -47,8 +49,9 @@ select month(date(payment_date)), sum(amount), count(rental_id)
 from payment p 
 group by month(date(payment_date))
 order by sum(amount) desc
+limit 1
 ```
-
+![задание 3](https://github.com/zilaev/12-4/blob/main/3.png)
 ---
 ## Дополнительные задания (со звездочкой*)
 
@@ -67,6 +70,7 @@ as "ПРЕМИЯ"
 from rental
 group by staff_id 
 ```
+![задание 4](https://github.com/zilaev/12-4/blob/main/4.png)
 
 ### Задание 5*
 
@@ -80,3 +84,4 @@ join rental r on r.inventory_id = i.inventory_id
 group by f.film_id 
 having count(r.rental_id) = 0
 ```
+![задание 5](https://github.com/zilaev/12-4/blob/main/5.png)
